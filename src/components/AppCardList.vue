@@ -23,6 +23,21 @@ export default {
 
 </script>
 
-<template> </template>
+<template> 
+
+<div v-for="(card, index) in store.movies" key="index" class="card">{{ card.title }} - {{card.original_title}} - 
+    <img :src="`../assets/flags/${card.original_language}.gif`"> - {{card.vote_average}}</div>
+
+
+
+
+
+
+
+
+</template>
+   
+
+
 
 <style></style>

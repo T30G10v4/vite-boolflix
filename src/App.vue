@@ -25,6 +25,7 @@ export default {
   methods: {
 
     performSearch() {
+      store.movies = [];
       axios
       
         .get(`${store.moviesURL}?api_key=${store.key}&query=${store.search}`)
