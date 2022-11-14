@@ -6,7 +6,6 @@ import axios from 'axios';
 import AppSearchBar from "./components/AppSearchBar.vue";
 import AppCardList from "./components/AppCardList.vue";
 
-
 export default {
 
   components: {

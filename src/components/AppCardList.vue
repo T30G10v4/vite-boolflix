@@ -1,10 +1,28 @@
 <script>
+import { store } from "../store.js"
+
+export default {
+
+    name: "AppCardList",
+    data() {
+
+        return {
+
+            store
+
+        }
+
+    },
+    methods: {
+
+
+
+    }
+
+}
 
 </script>
 
-<template>
+<template> </template>
 
-</template>
-
-<style scoped>
-</style>
+<style></style>
