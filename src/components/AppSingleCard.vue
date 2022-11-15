@@ -47,15 +47,16 @@ export default {
 
 <template>
 
+    <img :src="`https://image.tmdb.org/t/p/w342${card.poster_path}`" alt="">
     <h3>{{ getTitleOrName }}</h3>
     <p>{{ getOriginalTitleOrOriginalName }}</p>
-    <img :src="getImageUrl(`../assets/flags/${card.original_language}.gif`)">
+    <img class="flag" :src="getImageUrl(`../assets/flags/${card.original_language}.gif`)">
     <p>{{ card.vote_average }}</p>
 
 </template>
 
 <style scoped>
-    img {
+    img.flag {
         
         width: 40px;
         height: 30px;
