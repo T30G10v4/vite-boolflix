@@ -9,7 +9,7 @@ export const store = reactive({
     imagesURL: "https://image.tmdb.org/t/p/w500/",
     baseURL: "https://api.themoviedb.org/3/",
     moviesURL: "https://api.themoviedb.org/3/search/movie",
-    tvShowsURL: "tv/",
+    tvShowsURL: "https://api.themoviedb.org/3/search/tv",
     search: ""
 
 });

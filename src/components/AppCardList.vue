@@ -1,43 +1,39 @@
 <script>
 import { store } from "../store.js"
+import AppSingleCard from "./AppSingleCard.vue";
 
 export default {
-
     name: "AppCardList",
     data() {
-
         return {
-
             store
-
-        }
-
+        };
     },
     methods: {
-
-
-
-    }
-
+        getImageUrl(url) {
+            return new URL(url, import.meta.url).href;
+        }
+    },
+    components: { AppSingleCard }
 }
 
 </script>
 
 <template> 
 
-<div v-for="(card, index) in store.movies" key="index" class="card">{{ card.title }} - {{card.original_title}} - 
-    <img :src="`../assets/flags/${card.original_language}.gif`"> - {{card.original_language}} - {{card.vote_average}}</div>
+<AppSingleCard v-for="(movie, index) in store.movies" key="index" class="card" :card="movie"/>
 
-
-
-
-
-
+<AppSingleCard v-for="(tvShow, index) in store.tvShows" key="index" class="card" :card="tvShow"/>
 
 
 </template>
-   
 
+<style scoped>
 
+img {
 
-<style></style>
+    width: 40px;
+    height: 30px;
+
+}
+</style>
