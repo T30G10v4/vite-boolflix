@@ -36,6 +36,17 @@ export default {
 
             return this.card.original_title ? this.card.original_title : this.card.original_name;
 
+        },
+        getStarsFromVote() {
+
+           
+            return Math.ceil(this.card.vote_average / 2);
+
+        },
+        getEmptyStarsFromVote() {
+
+            return 5 - (Math.ceil(this.card.vote_average / 2));
+
         }
 
         
@@ -51,7 +62,8 @@ export default {
     <h3>{{ getTitleOrName }}</h3>
     <p>{{ getOriginalTitleOrOriginalName }}</p>
     <img class="flag" :src="getImageUrl(`../assets/flags/${card.original_language}.gif`)">
-    <p>{{ card.vote_average }}</p>
+    <span class ="star" v-for="star in getStarsFromVote">&starf;</span>
+    <span class ="empty-star" v-for="emptyStar in getEmptyStarsFromVote">&star;</span>
 
 </template>
 
@@ -61,6 +73,12 @@ export default {
         width: 40px;
         height: 30px;
        
+
+    }
+
+    .star {
+
+        color: yellow;
 
     }
 </style>
